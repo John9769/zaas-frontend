@@ -9,12 +9,11 @@ export const getTemplates = async (category) => {
     : `${API_URL}/api/templates`;
 
   const res = await fetch(url);
-  const data = await res.json();
-  return data;
+  return res.json();
 };
 
 // ============================================
-// UPLOAD PHOTOS
+// UPLOAD PHOTOS — exactly 4
 // ============================================
 export const uploadPhotos = async (files) => {
   const formData = new FormData();
@@ -25,8 +24,7 @@ export const uploadPhotos = async (files) => {
     body: formData
   });
 
-  const data = await res.json();
-  return data;
+  return res.json();
 };
 
 // ============================================
@@ -39,8 +37,7 @@ export const createOrder = async (orderData) => {
     body: JSON.stringify(orderData)
   });
 
-  const data = await res.json();
-  return data;
+  return res.json();
 };
 
 // ============================================
@@ -48,6 +45,5 @@ export const createOrder = async (orderData) => {
 // ============================================
 export const getOrderStatus = async (orderId) => {
   const res = await fetch(`${API_URL}/api/orders/${orderId}/status`);
-  const data = await res.json();
-  return data;
+  return res.json();
 };
